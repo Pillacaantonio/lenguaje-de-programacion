@@ -11,13 +11,12 @@
 
 <body>
 
-	<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+		<nav class="navbar navbar-expand-md bg-dark navbar-dark">
 		<a class="navbar-brand" href="#">
 			Control Solicitante
 		</a>
 
 		<div class="collapse navbar-collapse" id="collapsibleNavbar">
-			
 			<ul class="navbar-nav">
 				<li class="nav-item"><a class="nav-link" th:href="@{/solicitante}">Usuarios Registrados</a>
 				</li>
@@ -48,13 +47,13 @@
 
 	<div class="container">
 		<div class="row">
-			<h1>Listar Postulante</h1>
+			<h1>Listar Equipo</h1>
 
 
 		</div>
 		<div class="row">
 			<div class="col-lg-3">
-				<a th:href="@{solicitante/nuevo}" class="btn btn-primary btn-sm mb3">Agregar Solicitante</a>
+				<a th:href="@{equipo/nuevo}" class="btn btn-primary btn-sm mb3">Agregar Equipo</a>
 				
 			</div>
 			<br>
@@ -62,36 +61,25 @@
 		<table class="table table-striped ">
 			<thead class="thead-dark">
 				<tr>
-	 
-					<th>Apellido</th>
-					<th>Nombre</th>
-					<th>Cargo</th>
-					<th>Correo</th>
-					<th>Direccion</th>
-					<th>Departamento</th>
-					<th>Estado civil</th>
-					<th>Fecha de Nacimiento</th>
-					<th>Telefono</th>
-					<th>Acciones</th>
+	 				<th>Codigo</th>
+					<th>Estado del equipo</th>
+					<th>Marca del Equipo</th>
+					<th>Modelo del Equipo</th>
+	
 					<br>
 				</tr>
 			</thead>
 			<tbody>
-				<tr th:each="soli:${solicitante}">
-				 
-					<td th:text="${soli.apellido}">Apellido</td>
-					<td th:text="${soli.nombre}">Nombre</td>
-					<td th:text="${soli.cargo}">Cargo</td>
-					<td th:text="${soli.correo}">Correo</td>
-					<td th:text="${soli.direccion}">Direccion</td>
-					<td th:text="${soli.departamento}">Departamento</td>
-					<td th:text="${soli.estadoCivil}">Estado civil</td>
-					<td th:text="${soli.fechaNacimiento}">Fecha de Nacimiento</td>
-					<td th:text="${soli.telefono}">Telefono</td>
+				<tr th:each="equi:${equipo}">
+					<td th:text="${equi.cod_Equipo}">Codigo</td>
+					<td th:text="${equi.estado_Equipo}">Estado del equipo</td>
+					<td th:text="${equi.marca_Equipo}">Marca del Equipo</td>
+					<td th:text="${equi.modelo_Equipo}">Modelo del Equipo</td>
+				
 					<td>
 
-						<a th:href="@{/solicitante/editar/{id}(id=${soli.id})}" class="btn btn-info">Editar</a>
-						<a th:href="@{/solicitante/{id}(id=${soli.id})}" class="btn btn-danger">Elimiar</a>
+						<a th:href="@{/equipo/editar/{id}(id=${equi.id})}" class="btn btn-info">Editar</a>
+						<a th:href="@{/equipo/{id}(id=${equi.id})}" class="btn btn-danger">Elimiar</a>
 
 					</td>
 
